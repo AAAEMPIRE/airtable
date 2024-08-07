@@ -1,0 +1,175 @@
+Fields
+Each record in the Foreclosed Properties table contains the following fields:
+
+Field names and field ids can be used interchangeably. Using field ids means field name changes do not require modifications to your API request. We recommend using field ids over field names where possible, to reduce modifications to your API request if the user changes the field name later.
+
+Field NameField IDTypeDescription
+Property AddressfldfA9RqV0jQXoFakText
+string
+A single line of text.
+ 
+Example values
+"1894 w virginia st san bernardino ca 92405"
+
+"456 Oak Avenue"
+
+"789 Pine Lane"
+
+"101 Birch Boulevard"
+
+"202 Cedar Court"
+
+Auction DatefldSaCx8e5RqkDxPU
+Date
+string (ISO 8601 formatted date)
+UTC date, e.g. "2014-09-05".
+ 
+Example values
+"2024-07-27"
+
+"2024-08-04"
+
+"2024-08-08"
+
+"2024-08-17"
+
+"2024-08-24"
+
+Excess TaxesfldKO2CjvizKcVgrXCurrency
+number
+Currency value. This field allows negative and positive numbers.
+ 
+Example values
+12000.00
+
+18000.00
+
+20000.00
+
+22000.00
+
+25000.00
+
+Unpaid SurplusesfldB6rAQ3cWSy4XzsCurrency
+number
+Currency value. This field allows negative and positive numbers.
+ 
+Example values
+3000.00
+
+7000.00
+
+8000.00
+
+9000.00
+
+10000.00
+
+Property Photofld76qTRw7p11FLjN
+Attachment
+array of attachment objects
+Each attachment object may contain the following properties. To see which fields are required or optional, please consult the relevant section: retrieve, create, update, or delete.
+
+Because this field is configured to show attachments in reversed order, the order of attachments in the app will be reversed compared to what you see here.
+
+idstring
+unique attachment id
+urlstring
+url, e.g. "https://v5.airtableusercontent.com/foo".
+
+Note: URLs returned will expire 2 hours after being returned from our API. If you want to persist the attachments, we recommend downloading them instead of saving the URL. See our support article for more information.
+filenamestring
+filename, e.g. "foo.jpg"
+sizenumber
+file size, in bytes
+typestring
+content type, e.g. "image/jpeg"
+widthnumberheightnumber
+width/height, in pixels (these may be available if the attachment is an image)
+thumbnails.small.urlstringthumbnails.large.urlstring
+url of small/large thumbnails (these may be available if the attachment is an image or document). See notes under url about the lifetime of these URLs.
+thumbnails.small.widthnumberthumbnails.small.heightnumberthumbnails.large.widthnumberthumbnails.large.heightnumber
+width/height of small/large thumbnails, in pixels (these will be available if the corresponding thumbnail url is available)
+ 
+Example values
+[
+    {
+        "id": "attBanEjWEOZAAraz",
+        "width": 600,
+        "height": 401,
+        "url": "https://v5.airtableusercontent.com/v3/u/31/31/1723068000000/v8LRUwAmhLyYYW5vbrFqGA/Wk4CEXQKwCntuRQmMafe3gHM3l0TNN8oNhC42kCzmy-iAFqChlTs4pIQl_fw-GsxPqhD9mDPnEtuqGuY499EdY3X27T4ifMFmlQyfw5ehAZPFgBejXyyM7wQYbEVSUp4X8DgYU8ladtb7oS054kcZSwbLUHeDm_McjAFOaQ_Dn0/ROTRJikp7deyeZDKTR7R1IFV36iwd-j5P615OXO0eW4",
+        "filename": "abstract_9.png",
+        "size": 210416,
+        "type": "image/png",
+        "thumbnails": {
+            "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/31/31/1723068000000/i3sGcnNNZQj_XyUnCWZpRQ/tmX6pL5WexanpO2PSYLGXkugJge4K2KvhZfU-UKwlfdjtM_Zs5Ue41Z0y-lNpHpjkPXMlOPcUloQFzl5jWi_L1MfM9C1T3XAr0yRbWzpR24J4POySOWsj-KnmPKXda21aqyD_sFX90Ow8LzqF5Iqiw/Zl1jFUsC-4IITBy4FPQVGqvtyrxg52FogU1tRrPPdBw",
+                "width": 54,
+                "height": 36
+            },
+            "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/31/31/1723068000000/xGovW9usJrooZoNSEZwE2w/--wNqgNbggFHuTVrpXm2GuPAaezd7dbnFcp2_j_PvOn9CTc_GM68rYMnTAhnvyBC2tLl7f-oDFNmTtM38eySMADVYI09mJSK8Rp-pwjoIqpH_e3E3ArBnE3Q1q-nH1E_o6xF8vcDqytSt2oMd4_rug/Y10GhsCMUvJIicRGhY3n--c2qX2rq69U1vsSMa4xmqA",
+                "width": 600,
+                "height": 401
+            },
+            "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/31/31/1723068000000/OyUX2R9LEu5u-Pu8wtOW_A/KePVnPKzo0Wj22KvOnZ8BHPKinvVfFn6mL-ySVlcC5n6Q__I8pRTggjGk3GllzOvVUmFQ9kFWL3RChZY_3ZXAg6kRmYYue7Vm8Wq0FRtJNCZkiXWnWhS26YathW_fiQjLs6K1_w-mI7yIflVSf6gaQ/-BFvF5HjwYH95HFr6bTRkFMxCW6QCjfaZyDtOHw6dxw",
+                "width": 600,
+                "height": 401
+            }
+        }
+    }
+]
+
+[
+    {
+        "id": "attowIdShqIx52ZEA",
+        "width": 600,
+        "height": 401,
+        "url": "https://v5.airtableusercontent.com/v3/u/31/31/1723068000000/9oSx6swauh55wax4qAcK_g/ZOHBVP4okoL-g0FtLYgDVKpKqUTc-0Jl32FGh5T3lgLL-BUAnn0g26rUh0iL9uoGWIrAVabhzDOVeUdLZYWMi0RcbzmKNNrevY98Ew7xBjWdJvz2-2UsjI5r9BVvB5rtxVkoj7bTCKkdiIbNumB1hY7ogoic3H16YAnMmt8sbTw/1_C2saju6Zbu4WCePS8dzK9lTihXykSQ-mw437QyX7o",
+        "filename": "abstract_25.png",
+        "size": 265213,
+        "type": "image/png",
+        "thumbnails": {
+            "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/31/31/1723068000000/AlZcDjg9mykW4B4tpXNpAg/MsdU4eJiQ205iHGPvcZP3MO5RTa0Cp8eoV521cEFgDPyMJ1IXq6j67RSbl-X9-XLxPLpAHX_AAwQrbLMek_qIlOOZG_Z3tc9UPyk4dwkczV9jAV2aiz69WRr7ZVkMxmbPKMe9BTwi5NpMHTNRiZsEg/zX6LZO7xz2xk9eom6Ko9LSNHo8ZWH535QBMwP6YCMT4",
+                "width": 54,
+                "height": 36
+            },
+            "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/31/31/1723068000000/cqZp2TLK1K8zAcAgxJWPoQ/WESF3A5eKlKukesQpZuwSTIzKLwFR2ZSac0wxq5z1kMh04ts_W1ypXnDVXQ9xdiVIv1SS6-jfZLs8hmrO2xUxo9Zj23-5o-B6527-FWR64yYixcjrAun8ZxwDl0Q4QZPtemymypSS25yB9gVB6J_9Q/WBKzlAIzGQktz7fOIbHORhkQcXZJ2RammKveh-otxKg",
+                "width": 600,
+                "height": 401
+            },
+            "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/31/31/1723068000000/A4G1F4dJB6ZmvoiP4ZHZJg/DA7tVNJVLy_fBnhbVNse_63xUL6fBdxp_fK_pqJKG5f_KeIut5mzUiI1DZPDHp5sSb6SOpclJ3ABym-gdwYTuS4zpAn40EzMGqp8B7B5io9SNp6R--VJTfQPoN3yP40Bge9LwhKofFNrmdvl2RlxwQ/BXopk_7ihf7Tz721go6bXqz7H3rrtFUARlfbxG0FeQw",
+                "width": 600,
+                "height": 401
+            }
+        }
+    }
+]
+
+InvestorsfldioBsVFXH9Rm0sF
+Link to another record
+array of record IDs (strings)
+Array of linked records IDs from the Investors table.
+ 
+Example value
+["rec8116cdd76088af", "rec245db9343f55e8", "rec4f3bade67ff565"]
+
+Surplus Fundsfld3NYcJyBsHy0W5q
+Link to another record
+array of record IDs (strings)
+Array of linked records IDs from the Surplus Funds table.
+ 
+Example value
+["rec8116cdd76088af", "rec245db9343f55e8", "rec4f3bade67ff565"]
+
+Private Money LendersfldTUwcdoCr2xKIlT
+Link to another record
+array of record IDs (strings)
+Array of linked records IDs from the Private Money Lenders table.
+ 
+Example value
+["rec8116cdd76088af", "rec245db9343f55e8", "rec4f3bade67ff565"]
